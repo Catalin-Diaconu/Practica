@@ -1,0 +1,18 @@
+<div style="text-align:center">
+  <h1>{{ title }}</h1>
+  <head><link rel="stylesheet" href="C:\Users\robert.diaconu\Desktop\practica\SearchingAlgorithms\src\app\app.component.html"></head>
+  <div class ="label">Please type the vector you want to search in(use backspace for spacing):</div>
+  <input [(ngModel)]='stringVector' class="textbox" (change)="onChange($event)">
+  <div class="label">Please type the element you are searching for:</div>
+  <input [(ngModel)]="element1" class="textbox">
+  <div class="label">Choose one of the following searching algorithms</div>
+  <select class="label" [(ngModel)]="options" >
+    <option value="1">Linear</option>
+    <option value="2">Binary</option>
+    <option value="3">Interpolation</option>
+  </select>  
+  <div><button mat-raised-button id="btn" (click)="onClickSearch()">Search!</button></div>
+  <div class="label" *ngIf="(options>1)">Vector must be sorted! </div>
+  <div class="label">{{message}}</div>
+</div>
+<router-outlet></router-outlet>
